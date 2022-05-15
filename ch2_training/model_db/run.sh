@@ -14,13 +14,12 @@ MAX_REQUESTS_JITTER=${MAX_REQUESTS_JITTER:-2048}
 GRACEFUL_TIMEOUT=${GRACEFUL_TIMEOUT:-10}
 APP_NAME=${APP_NAME:-"src.api.app:app"}
 
-gunicorn ${APP_NAME} \ 
-    -b ${HOST}:${PORT} \ 
-    -w ${WORKERS} \ 
-    -k ${UVICORN_WORKER} \ 
-    - daemon \ 
-    --backlog ${BACKLOG} \ 
-    --max-requests ${LIMIT_MAX_REQUESTS} \ 
-    --max-requests-jitter ${MAX_REQUESTS_JITTER} \ 
-    --graceful-timeout ${GRACEFUL_TIMEOUT} \ 
+gunicorn ${APP_NAME} \
+    -b ${HOST}:${PORT} \
+    -w ${WORKERS} \
+    -k ${UVICORN_WORKER} \
+    --backlog ${BACKLOG} \
+    --max-requests ${LIMIT_MAX_REQUESTS} \
+    --max-requests-jitter ${MAX_REQUESTS_JITTER} \
+    --graceful-timeout ${GRACEFUL_TIMEOUT} \
     --reload
