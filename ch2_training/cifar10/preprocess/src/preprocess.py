@@ -10,7 +10,7 @@ from src.extract_data import parse_pickle, unpickle
 
 
 def main():
-    parser = argparse.argument_parser(
+    parser = argparse.ArgumentParser(
         description="Make dataset",
         formatter_class=argparse.RawTextHelpFormatter,
     )

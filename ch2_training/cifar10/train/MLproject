@@ -2,7 +2,7 @@ name: cifar10_initial
 
 docker_env:
   image: cwryu6252/ml-system-design-pattern:training_pattern_cifar10_0.0.1
-  volumes: ["$(pwd)/data:/opt/data", "ml-system-design-pattern/ch2_training/cifar10/mlruns:/tmp/mlruns"]
+  volumes: ["$(pwd)/data:/opt/data", "/ml-system-design-pattern/ch2_training/cifar10/mlruns:/tmp/mlruns"]
 
 entry_points:
   train:
@@ -16,13 +16,13 @@ entry_points:
       learning_rate: {type: float, default: 0.001}
       model_type: {type: string, default: vgg16}
     command: |
-      python -m src.train ^
-        --upstream {upstream} ^
-        --downstream {downstream} ^
-        --tensorboard {tensorboard} ^
-        --epochs {epochs} ^
-        --batch_size {batch_size} ^
-        --num_workers {num_workers} ^
-        --learning_rate {learning_rate} ^
+      python -m src.train \
+        --upstream {upstream} \
+        --downstream {downstream} \
+        --tensorboard {tensorboard} \
+        --epochs {epochs} \
+        --batch_size {batch_size} \
+        --num_workers {num_workers} \
+        --learning_rate {learning_rate} \
         --model_type {model_type}
 

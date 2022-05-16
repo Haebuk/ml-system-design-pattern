@@ -178,6 +178,13 @@ def main():
                 "upstream": os.path.join(
                     "../mlruns/",
                     str(mlflow_experiment_id),
+                    train_run.info.run_id,
+                    "artifacts",
+                ),
+                "downstream": args.evaluate_downstream,
+                "test_data_directory": os.path.join(
+                    "../mlruns/",
+                    str(mlflow_experiment_id),
                     preprocess_run.info.run_id,
                     "artifacts/downstream_directory/test",
                 ),
@@ -186,6 +193,7 @@ def main():
             },
         )
         evaluate_run = mlflow.tracking.MlflowClient().get_run(evaluate_run.run_id)
+
 
 if __name__ == "__main__":
     main()

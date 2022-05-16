@@ -14,5 +14,5 @@ ENV MODEL_PATH /${PROJECT_DIR}/${model_filename}
 
 WORKDIR /onnxruntime/server/
 COPY ./${entrypoint_path} ./onnx_runtime_server_entrypoint.sh
-RUN chmod +x ./onnx_runtime_server_entrypoint.sh
+RUN chmod +x onnx_runtime_server_entrypoint.sh
 ENTRYPOINT ["./onnx_runtime_server_entrypoint.sh"]
