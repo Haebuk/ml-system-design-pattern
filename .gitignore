@@ -1,3 +1,5 @@
 .venv
 .vscode
 postgres
+mlruns
+__pycache__
