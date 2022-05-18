@@ -10,7 +10,7 @@ logger = getLogger(__name__)
 router = APIRouter()
 
 
-@router.get("health")
+@router.get("/health")
 def health() -> Dict[str, str]:
     return {"health": "ok"}
 
