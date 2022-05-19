@@ -20,7 +20,7 @@ class Classifier(object):
         self.model_filepath: str = model_filepath
         self.label_filepath: str = label_filepath
         self.classifier = None
-        self.label = Dict[str, str] = {}
+        self.label: Dict[str, str] = {}
         self.input_name: str = ""
         self.output_name: str = ""
 
